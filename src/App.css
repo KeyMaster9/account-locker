@@ -1,0 +1,246 @@
+:root {
+  /* Primary Colors */
+  --primary: #FD4556;      /* Bright Red - Main brand color */
+  --primary-dark: #BD3944; /* Dark Red - Secondary brand color */
+  --primary-darker: #53212B; /* Deep Red - Accent color */
+  
+  /* Neutral Colors */
+  --background: #FFFBF5;   /* Off White - Background color */
+  --text: #000000;         /* Black - Text color */
+  
+  /* Additional Variables */
+  --shadow: rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+}
+
+/* Mobile First Layout */
+.app {
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  background-color: var(--background);
+}
+
+/* Navigation */
+.nav-bar {
+  background-color: var(--text);
+  padding: 1rem;
+  margin: -1rem -1rem 1rem -1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: var(--background);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background-color: var(--primary);
+}
+
+/* Forms */
+.register-form, .login-form {
+  max-width: 100%;
+  margin: 0 auto; /* Changed from 1rem auto */
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.login-form h2 {
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.form-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.form-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--primary-darker);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(253, 69, 86, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary);
+  color: var(--background);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+button:disabled {
+  background-color: var(--primary-darker);
+  cursor: not-allowed;
+}
+
+/* Messages */
+.message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.message.error {
+  background-color: rgba(253, 69, 86, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.message.success {
+  background-color: rgba(82, 33, 42, 0.1);
+  color: var(--primary-darker);
+  border: 1px solid var(--primary-darker);
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+  .nav-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .app {
+    padding: 0;
+  }
+
+  .register-form, .login-form {
+    max-width: 400px;
+    padding: 2rem;
+  }
+}
+
+/* Additional tablet/desktop enhancements */
+@media (min-width: 1024px) {
+  .register-form, .login-form {
+    max-width: 480px;
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home h1 {
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
